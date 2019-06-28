@@ -1,6 +1,8 @@
 let wins = 0;
 let losses = 0;
 let numGuesses = 0;
+let guessLeft= 9;
+let resetCounter= 9;
 // let guessChoices = []
 
 
@@ -18,22 +20,31 @@ let computerGuess = options[Math.floor(Math.random() * options.length)];
     console.log(computerGuess);
 
 
+    
 if ((userGuess==computerGuess)) {
     wins++;
     alert("win!");
-} else {
-    losses++
-    alert("loss");
 }
+ else {
+    losses++;
+    guessLeft--;
+    alert("Nope. Please try again!");
+}
+
 
 let html = "<p>Guess what letter I am thinking of!</p>" +
 "<p>Wins: " + wins + "</p>" +
-"<p>Losses: " + losses + "</p>" 
-// "<p>Guesses Left: " + numGuesses + "</p>" +
+"<p>Losses: " + losses + "</p>" +
+"<p>Guesses Left: " + guessLeft + "</p>"; 
 // "<p>Your guesses so far: " + guessChoices "</p>"
 
 
 document.querySelector("#game").innerHTML = html;
+}
+
+if (guessLeft = 0) {
+    alert("Game Over!");
+            
 }
 
 
