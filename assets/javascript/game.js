@@ -24,13 +24,14 @@ let computerGuess = options[Math.floor(Math.random() * options.length)];
 if ((userGuess==computerGuess)) {
     wins++;
     alert("win!");
+    guessLeft= 9;  
 }
 else if (guessLeft === 1) {
     alert("Game Over! Resetting");
-    let wins = 0;
-    let losses = 0;
-    let numGuesses = 0;
-    let guessLeft= 9;        
+    wins = 0;
+    losses = 0;
+    numGuesses = 0;
+    guessLeft= 9;        
 }
  else {
     losses++;
@@ -48,10 +49,3 @@ let html = "<p>Guess what letter I am thinking of!</p>" +
 
 document.querySelector("#game").innerHTML = html;
 }
-
-
-
-
-
-
-
