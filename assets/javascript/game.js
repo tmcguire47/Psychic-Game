@@ -25,6 +25,13 @@ if ((userGuess==computerGuess)) {
     wins++;
     alert("win!");
 }
+else if (guessLeft === 1) {
+    alert("Game Over! Resetting");
+    let wins = 0;
+    let losses = 0;
+    let numGuesses = 0;
+    let guessLeft= 9;        
+}
  else {
     losses++;
     guessLeft--;
@@ -42,10 +49,7 @@ let html = "<p>Guess what letter I am thinking of!</p>" +
 document.querySelector("#game").innerHTML = html;
 }
 
-if (guessLeft = 0) {
-    alert("Game Over!");
-            
-}
+
 
 
 
